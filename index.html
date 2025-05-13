@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Hub - Resource Center</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+    
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            flex: 1;
+        }
+        
+        .logo img {
+            max-height: 40px;
+        }
+        
+        /* Navigation */
+        nav {
+            flex: 2;
+            text-align: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+      nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+nav .active {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+        .header-button {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+        
+        .mobile-button {
+            display: none;
+        }
+        
+        /* Toggle Menu for Mobile */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #555;
+        }
+        
+    /* Mobile styles */
+@media (max-width: 768px) {
+    .header-inner {
+        padding: 15px;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        padding: 20px 0;
+        z-index: 99;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .desktop-button {
+        display: none;
+    }
+
+    .mobile-button {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+        /* Hero Section */
+        .banner-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        
+        .banner {
+            background: linear-gradient(45deg, #1a73e8, #4285f4);
+            border-radius: 12px;
+            padding: 60px 30px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(26, 115, 232, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animated background elements */
+        .bg-element {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .bg-element-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+            animation: float 15s infinite alternate ease-in-out;
+        }
+        
+        .bg-element-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -70px;
+            right: 10%;
+            animation: float 12s infinite alternate-reverse ease-in-out;
+        }
+        
+        .bg-element-3 {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            right: -50px;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(20px, 20px) scale(1.05);
+            }
+            100% {
+                transform: translate(-20px, -20px) scale(0.95);
+            }
+        }
+        
+        .main-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards 0.2s;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards 0.8s;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .search-input:focus {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .search-input::placeholder {
+            color: #aaa;
+        }
+        
+        .search-button {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-button:hover {
+            background-color: #0d65d9;
+            transform: translateY(-1px);
+        }
+        
+        /* Floating icons animation */
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        
+        .icon-1 {
+            top: 20%;
+            left: 15%;
+            animation-name: float-1;
+        }
+        
+        .icon-2 {
+            top: 70%;
+            left: 20%;
+            animation-name: float-2;
+            animation-delay: 1s;
+        }
+        
+        .icon-3 {
+            top: 30%;
+            right: 15%;
+            animation-name: float-3;
+            animation-delay: 2s;
+        }
+        
+        .icon-4 {
+            top: 60%;
+            right: 20%;
+            animation-name: float-4;
+            animation-delay: 3s;
+        }
+        
+        @keyframes float-1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(15px, 15px) rotate(5deg); }
+            50% { transform: translate(0, 30px) rotate(0deg); }
+            75% { transform: translate(-15px, 15px) rotate(-5deg); }
+        }
+        
+        @keyframes float-2 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-15px, -15px) rotate(-5deg); }
+            50% { transform: translate(0, -30px) rotate(0deg); }
+            75% { transform: translate(15px, -15px) rotate(5deg); }
+        }
+        
+        @keyframes float-3 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-15px, 15px) rotate(-5deg); }
+            50% { transform: translate(0, 30px) rotate(0deg); }
+            75% { transform: translate(15px, 15px) rotate(5deg); }
+        }
+        
+        @keyframes float-4 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(15px, -15px) rotate(5deg); }
+            50% { transform: translate(0, -30px) rotate(0deg); }
+            75% { transform: translate(-15px, -15px) rotate(-5deg); }
+        }
+
+        /* Pulse effect on search bar */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* Add a typing animation to the placeholder */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .search-input {
+                padding: 15px 20px;
+            }
+            
+            .search-button {
+                padding: 9px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            
+            .search-button {
+                font-size: 0.9rem;
+            }
+        }
+        /* Categories Section */
+
+         .page-header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        
+        .main-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        
+        .subheading {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-content {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .category-title {
+            padding: 1.5rem;
+            font-size: 1.25rem;
+            color: #333;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .thumbnail-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        
+        .thumbnail-list {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .thumbnail {
+            flex: 1;
+            padding: 0.5rem;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+        
+        .thumbnail:hover img {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .category-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .category-title {
+                padding: 1rem;
+            }
+        }
+       
+      
+       /* Featured Templates Section */
+        .featured-templates {
+            margin-bottom: 80px;
+            margin-top: 80px;
+            
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 36px;
+            text-align: center; /* Ensures text is centered */
+        }
+        
+        .section-titles {
+            max-width: 800px; /* Optional: limit width */
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+        }
+        
+        .section-subtitle {
+            font-size: 16px;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .browse-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .browse-link:hover {
+            color: #555;
+        }
+        
+        .browse-link svg {
+            margin-left: 8px;
+        }
+        
+        /* Templates Grid */
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        /* Template Card */
+        .template-card {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .template-preview {
+            width: 100%;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            background-color: #fff;
+            position: relative; /* Added for overlay positioning */
+        }
+        
+        .template-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        /* Hover overlay for "View Details" button */
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .template-preview:hover .hover-overlay {
+            opacity: 1;
+        }
+        
+        .view-details-btn {
+            padding: 12px 24px;
+            background-color: white;
+            color: #111;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .view-details-btn:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .template-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .template-creator {
+            display: flex;
+            align-items: center;
+        }
+        
+        .creator-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .creator-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .creator-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .template-name {
+            font-weight: 600;
+            font-size: 15px;
+            color: #111;
+            margin-bottom: 2px;
+        }
+        
+        .creator-name {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .template-price {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111;
+        }
+        
+        /* Divider Line */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #eee;
+            margin-top: 16px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .templates-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .browse-link {
+                margin-top: 16px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+        }
+
+        /* trending templates */
+
+       /* Trending Templates Section */
+        .trending-templates {
+            margin: 80px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .trending-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 36px;
+            text-align: center;
+        }
+
+        .trending-titles {
+            max-width: 800px;
+        }
+
+        .trending-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .trending-subtitle {
+            font-size: 16px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .trending-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        /* Template Card */
+        .template-card {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .template-preview {
+            width: 100%;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            background-color: #fff;
+            position: relative; /* Added for positioning overlay */
+        }
+
+        .template-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* New hover overlay styles */
+        .hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .template-preview:hover .hover-overlay {
+            opacity: 1;
+        }
+
+        .view-details-btn {
+            padding: 12px 24px;
+            background-color: white;
+            color: #111;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: none;
+            font-size: 14px;
+        }
+
+        .view-details-btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .template-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .template-creator {
+            display: flex;
+            align-items: center;
+        }
+
+        .creator-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .creator-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .creator-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-name {
+            font-weight: 600;
+            font-size: 15px;
+            color: #111;
+            margin-bottom: 2px;
+        }
+
+        .creator-name {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .template-price {
+            font-weight: 600;
+            font-size: 14px;
+            color: #111;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #eee;
+            margin-top: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .trending-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .trending-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .trending-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trending-title {
+                font-size: 24px;
+            }
+        }
+
+
+        /* Partner Logos */
+      /*carousel brand company */
+
+
+/* Carousel Brand Company */
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  background-color: #f5f7fa;
+  margin-bottom: 50px;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+  gap: 40px;
+  padding: 20px 40px;
+  margin-top: 40px;
+  background-color: #f5f7fa; /* ✅ Inner carousel background */
+}
+
+.carousel-track img {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.carousel-track img:hover {
+  transform: scale(1.08);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Remove side gradient and border radius completely */
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-track {
+    gap: 30px;
+    padding: 15px 30px;
+  }
+
+  .carousel-track img {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-track {
+    gap: 20px;
+    padding: 10px 20px;
+  }
+
+  .carousel-track img {
+    width: 110px;
+  }
+}
+
+        
+      
+      
+        
+        /* CTA Section Styles */
+        .cta {
+            position: relative;
+            padding: 10px 0;
+            background-color: #2563EB; /* Blue background color */
+            color: #fff;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .cta-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .cta-content {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .cta-image {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .cta-image img {
+           
+            max-width: 100%;
+            height: auto;
+           
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-light {
+            background-color: #fff;
+            color: #1E40AF; /* Darker blue for contrast */
+            border: none;
+        }
+        
+        .btn-light:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 992px) {
+            .cta-flex {
+                flex-direction: column;
+                gap: 60px;
+            }
+            
+            .cta-content, .cta-image {
+                flex: none;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .cta-image img {
+                max-width: 80%;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .cta {
+                padding: 60px 0;
+            }
+            
+            .cta h2 {
+                font-size: 32px;
+            }
+            
+            .cta p {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+            }
+            
+            .cta-image img {
+                max-width: 100%;
+            }
+        }
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #e5e7eb;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 10px;
+            }
+            
+            .category-grid,
+            .featured-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .category-grid,
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .partner-logo {
+                width: 120px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+ <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo"><img src="https://www.ansonika.com/wilio/img-preview/logo.png" alt="Logo"></div>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#" >Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#featured">Featured</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="header-button mobile-button">
+                        <a href="#" class="btn-primary">Get Started</a>
+                    </div>
+                </nav>
+                <div class="header-button desktop-button">
+                    <a href="#" class="btn-primary">Get Started</a>
+                </div>
+                <div class="menu-toggle" id="menuToggle">☰</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="banner-container">
+        <div class="banner">
+            <!-- Background elements -->
+            <div class="bg-element bg-element-1"></div>
+            <div class="bg-element bg-element-2"></div>
+            <div class="bg-element bg-element-3"></div>
+            
+            <!-- Floating icons -->
+            <div class="floating-icons">
+                <div class="icon icon-1"></div>
+                <div class="icon icon-2"></div>
+                <div class="icon icon-3"></div>
+                <div class="icon icon-4"></div>
+            </div>
+            
+            <!-- Content -->
+            <h1 class="main-title">Unleash Creativity with Premium Assets</h1>
+            <p class="subtitle">Browse, discover, and download top-tier design, dev, and content assets to accelerate your workflow.</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for assets, templates, and more..." id="searchInput">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asset Categories -->
+
+    <div class="page-header" id="categories">
+        <h1 class="main-heading">Popular template categories</h1>
+        <p class="subheading">Explore the best Webflow templates, highly-rated amongst users.</p>
+    </div>
+      <div class="category-grid">
+        <!-- Portfolio & Agency -->
+        <div class="category-card">
+            <a href="#" class="category-content">
+                <h3 class="category-title">Portfolio & Agency</h3>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-list">
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7950769202af450307d_Portfolio.1.webp" alt="Portfolio template example 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7a0cadec14bfca1a314_Portfolio.2.webp" alt="Portfolio template example 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7b56dfb1ea7621eb146_Portfolio.3.webp" alt="Portfolio template example 3">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Technology -->
+        <div class="category-card">
+            <a href="#" class="category-content">
+                <h3 class="category-title">Technology</h3>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-list">
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b76ecadec14bfca18138_Tech.1.webp" alt="Technology template example 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b77e0aca39fd8f7792c3_Tech.2.webp" alt="Technology template example 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7883911c95f30e1f967_Tech.3.webp" alt="Technology template example 3">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Blog & Editorial -->
+        <div class="category-card">
+            <a href="#" class="category-content">
+                <h3 class="category-title">Blog & Editorial</h3>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-list">
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b74b6dfb1ea7621e5301_Blog.1.webp" alt="Blog template example 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b758d15b45ad13c6343b_Blog.2.webp" alt="Blog template example 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b763e2f73cc8f512713b_Blog.3.webp" alt="Blog template example 3">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Professional Services -->
+        <div class="category-card">
+            <a href="#" class="category-content">
+                <h3 class="category-title">Professional Services</h3>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-list">
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7ccd1761cb6471df269_Services.1.webp" alt="Professional Services template example 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7df296e4ae4037c2106_Services.2.webp" alt="Professional Services template example 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7eb5abbb9a1dd703a7e_Services.3.webp" alt="Professional Services template example 3">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Real Estate -->
+        <div class="category-card">
+            <a href="#" class="category-content">
+                <h3 class="category-title">Real Estate</h3>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-list">
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b7f858f7325e2803e9a8_RealEstate.1.webp" alt="Real Estate template example 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b80423d0daf4a1caed88_RealEstate.2.webp" alt="Real Estate template example 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b812fc90d5764aabad64_RealEstate.3.webp" alt="Real Estate template example 3">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Retail -->
+        <div class="category-card">
+            <a href="#" class="category-content">
+                <h3 class="category-title">Retail</h3>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-list">
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b81c0938aec44f4de1be_Retail.1.webp" alt="Retail template example 1">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b8259dc72756458d32aa_Retail.2.webp" alt="Retail template example 2">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/6708b82e1581068a50f0f31c_Retail.3.webp" alt="Retail template example 3">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Featured Assets -->
+     <section class="featured-templates">
+        <div class="section-header">
+            <div class="section-titles">
+                <h2 class="section-title">Featured Website Templates</h2>
+                <p class="section-subtitle">Hand-picked selection of website templates by our designers</p>
+            </div>
+        </div>
+        
+        <div class="templates-grid">
+            <!-- Template 1: Foley -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/6812724cae2dcf8636bbffd7_08bf8d28-57bb-47c0-9807-d998bac92f6c.webp" alt="Foley - Minimal Portfolio Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8e473dbf07b9c87d7f8c2_652d4f5367de7703e840ccab_pp__robinreal.webp" alt="Robin Granqvist">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Foley</div>
+                            <div class="creator-name">Robin Granqvist</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 2: HokStudio -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67fd199c3f9e480ff1f966d1_1714666c-3824-444f-806e-3da88b496205.webp" alt="HokStudio - Agency Website Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67a718741c185a3b3e128e81_fb9a7af7-846c-4c8e-8d8a-463db7a031ae.webp" alt="Arini Studio">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">HokStudio</div>
+                            <div class="creator-name">Arini Studio</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 3: Ondex -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/68102a39dc8f858806d01216_1745637115499_20055518_Secondary-20prev.webp" alt="Ondex - Tech Website Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8e771c1146851d6cf5d7c_7dd06f1f-040f-4ab0-8bfc-dff9ed5b2de7.webp" alt="Flowit Supply">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Ondex</div>
+                            <div class="creator-name">Flowit Supply</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 4: Acme -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/680082a9f755acfb5ddac84a_44b9568f-9639-4d5b-a979-bc3df5540179.jpeg" alt="Acme - Digital Studio Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8ea4b7db6c09b5f0fd454_654022010126b281f716acbe_flowzai.webp" alt="8AMDesign">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Acme</div>
+                            <div class="creator-name">8AMDesign</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$29 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </div>
+
+          <div class="templates-grid">
+            <!-- Template 5: Foley -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/674a803c97cd51f2da000b3a_8a030b76-7467-47cb-bb0d-3d235406f03a.webp" alt="Foley - Minimal Portfolio Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8e473dbf07b9c87d7f8c2_652d4f5367de7703e840ccab_pp__robinreal.webp" alt="Robin Granqvist">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Foley</div>
+                            <div class="creator-name">Robin Granqvist</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 6: HokStudio -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67fc72478e1fc5fc2697ee77_a04f8989-cdfb-4dc0-bf48-24b7b66bc996.webp" alt="HokStudio - Agency Website Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67a718741c185a3b3e128e81_fb9a7af7-846c-4c8e-8d8a-463db7a031ae.webp" alt="Arini Studio">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">HokStudio</div>
+                            <div class="creator-name">Arini Studio</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 7: Ondex -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67f537fc329d6fc04776f83c_1cb07e7e-6324-4c26-b0c3-aef82bfb8f75.webp" alt="Ondex - Tech Website Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8e771c1146851d6cf5d7c_7dd06f1f-040f-4ab0-8bfc-dff9ed5b2de7.webp" alt="Flowit Supply">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Ondex</div>
+                            <div class="creator-name">Flowit Supply</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 8: Acme -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67f935487f88882728b41488_1743880237080_717256742_Ondex_Thumb_2.webp" alt="Acme - Digital Studio Template">
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8ea4b7db6c09b5f0fd454_654022010126b281f716acbe_flowzai.webp" alt="8AMDesign">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Acme</div>
+                            <div class="creator-name">8AMDesign</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$29 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </section>
+
+        <!--------------trending Templates---------------->
+
+    <section class="trending-templates" id="trending">
+        <div class="trending-header">
+            <div class="trending-titles">
+                <h2 class="trending-title">Trending Website Templates</h2>
+                <p class="trending-subtitle">Monthly selection of curated website templates</p>
+            </div>
+        </div>
+
+        <div class="trending-grid">
+            <!-- Template 1: Foley -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/6822dcc2104f22926f47948d_afca9c70-ad49-4099-bd35-e0f8f8b9945c.webp" alt="Foley - Minimal Portfolio Template" />
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8e473dbf07b9c87d7f8c2_652d4f5367de7703e840ccab_pp__robinreal.webp" alt="Robin Granqvist" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Foley</div>
+                            <div class="creator-name">Robin Granqvist</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 2: HokStudio -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/681152d4904ff8114c5c5493_c8dfba41-1410-47a2-9745-f1d7a9d767a7.webp" alt="HokStudio - Agency Website Template" />
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67a718741c185a3b3e128e81_fb9a7af7-846c-4c8e-8d8a-463db7a031ae.webp" alt="Arini Studio" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">HokStudio</div>
+                            <div class="creator-name">Arini Studio</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 3: Ondex -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/6822b34469f71e6346cae3b9_13c884fa-e886-48bd-8a90-e70d6030d8d5.webp" alt="Ondex - Tech Website Template" />
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8e771c1146851d6cf5d7c_7dd06f1f-040f-4ab0-8bfc-dff9ed5b2de7.webp" alt="Flowit Supply" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Ondex</div>
+                            <div class="creator-name">Flowit Supply</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$49 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Template 4: Acme -->
+            <div class="template-card">
+                <div class="template-preview">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/68153aa25a0acedd6702baaf_e7d52cb1-f36b-4d7b-bd7c-e633d9445a47.webp" alt="Acme - Digital Studio Template" />
+                    <div class="hover-overlay">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/67b8ea4b7db6c09b5f0fd454_654022010126b281f716acbe_flowzai.webp" alt="8AMDesign" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Acme</div>
+                            <div class="creator-name">8AMDesign</div>
+                        </div>
+                    </div>
+                    <div class="template-price">$29 USD</div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Logos -->
+
+    <div class="page-header">
+        <h1 class="main-heading">Trusted By Industry Leaders</h1>
+    </div>
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <!-- Set of 4 images, repeated for infinite loop -->
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba060_file%20(11).svg" alt="Logo 1">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba024_file%20(25).svg" alt="Logo 2">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba060_file%20(11).svg" alt="Logo 3">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3b9fbb_file%20(10).svg" alt="Logo 4">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba094_file%20(9).svg" alt="Logo 5">
+      <!-- Repeat to make it seamless -->
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba060_file%20(11).svg" alt="Logo 1">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba024_file%20(25).svg" alt="Logo 2">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba060_file%20(11).svg" alt="Logo 3">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3b9fbb_file%20(10).svg" alt="Logo 4">
+      <img src="https://cdn.prod.website-files.com/66634c2f85acfff2d0894cbd/66635acbbb005567ec3ba094_file%20(9).svg" alt="Logo 4">
+    </div>
+  </div>
+
+    <!-- Call to Action -->
+  <section class="cta">
+        <div class="container">
+            <div class="cta-flex">
+                <div class="cta-content">
+                    <h2>Ready to Enhance Your Projects?</h2>
+                    <p>Join thousands of professionals using our premium assets to elevate their work and streamline their workflow.</p>
+                    <a href="#" class="btn btn-light">Get Started Today</a>
+                </div>
+                <div class="cta-image">
+                    <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/5e724ffc58686e74deae0b38_CTA%20Image-min.webp" 
+                         alt="CTA Image of design work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Graphics</a></li>
+                        <li><a href="#">Documents</a></li>
+                        <li><a href="#">Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">License</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 AssetHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Toggle menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+    </script>
+
+  <script>
+    const navLinks = document.querySelectorAll('#mainNav ul li a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            navLinks.forEach(l => l.classList.remove('active')); // Remove from all
+            this.classList.add('active'); // Add to clicked
+        });
+    });
+</script>
+
+</body>
+</html>
