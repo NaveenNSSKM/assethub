@@ -1470,12 +1470,14 @@ nav .active {
                 
                
                   <option  value="all">All Categories</option>
+                 
             <option value="email">Email</option>
             <option value="gatedasset">Asset Hub</option>
             <option value="meeting">Meeting</option>
             <option value="event">Event</option>
             <option value="webinar">Webinar</option>
-            
+             <option value="featured">FeaturedTemplates</option>
+                  <option value="trending">TrendingTemplates</option>
             
             </select>
         </div>
@@ -2227,7 +2229,7 @@ nav .active {
     });
 </script>
 
- <script>
+<script>
     function filterTemplates() {
         const searchInput = document.getElementById('searchInput');
         const categoryFilter = document.getElementById('categoryFilter');
@@ -2238,8 +2240,39 @@ nav .active {
         const featuredSection = document.querySelector('.featured-templates');
         const trendingSection = document.querySelector('.trending-templates');
 
-        // Show all featured templates if "featured" is typed in search
-        if (searchFilter === 'featured') {
+        // Handle category-based filtering for featured and trending
+        if (categoryValue === 'featured') {
+            // Show only featured templates
+            if (featuredSection) {
+                featuredSection.style.display = 'block';
+                const featuredTemplates = featuredSection.querySelectorAll('.template-card');
+                featuredTemplates.forEach(template => {
+                    const templateName = template.getAttribute('data-template-name').toLowerCase();
+                    const matchesSearch = searchFilter === '' || templateName.includes(searchFilter);
+                    template.style.display = matchesSearch ? 'block' : 'none';
+                });
+            }
+            if (trendingSection) trendingSection.style.display = 'none';
+            return;
+        }
+
+        if (categoryValue === 'trending') {
+            // Show only trending templates
+            if (trendingSection) {
+                trendingSection.style.display = 'block';
+                const trendingTemplates = trendingSection.querySelectorAll('.template-card');
+                trendingTemplates.forEach(template => {
+                    const templateName = template.getAttribute('data-template-name').toLowerCase();
+                    const matchesSearch = searchFilter === '' || templateName.includes(searchFilter);
+                    template.style.display = matchesSearch ? 'block' : 'none';
+                });
+            }
+            if (featuredSection) featuredSection.style.display = 'none';
+            return;
+        }
+
+        // Show all featured templates if "featured" is typed in search (but not selected in dropdown)
+        if (searchFilter === 'featured' && categoryValue !== 'featured') {
             if (featuredSection) {
                 featuredSection.style.display = 'block';
                 const featuredTemplates = featuredSection.querySelectorAll('.template-card');
@@ -2251,8 +2284,8 @@ nav .active {
             return;
         }
 
-        // Show all trending templates if "trending" is typed in search
-        if (searchFilter === 'trending') {
+        // Show all trending templates if "trending" is typed in search (but not selected in dropdown)
+        if (searchFilter === 'trending' && categoryValue !== 'trending') {
             if (trendingSection) {
                 trendingSection.style.display = 'block';
                 const trendingTemplates = trendingSection.querySelectorAll('.template-card');
@@ -2264,7 +2297,7 @@ nav .active {
             return;
         }
 
-        // Default filtering logic
+        // Default filtering logic for regular categories
         let featuredHasVisible = false;
         let trendingHasVisible = false;
 
@@ -2314,6 +2347,9 @@ nav .active {
             categoryFilter.addEventListener('change', filterTemplates);
         }
 
+        // Populate dropdown with featured and trending options
+        populateCategoryDropdown();
+        
         filterTemplates(); // Initial load
     });
 
@@ -2338,10 +2374,37 @@ nav .active {
         const categories = getAllCategories();
         categoryFilter.innerHTML = '';
 
-        categories.forEach(category => {
+        // Add categories in specific order: All, Featured, Trending, then others
+        const orderedCategories = ['all', 'featured', 'trending'];
+        const otherCategories = categories.filter(cat => !orderedCategories.includes(cat));
+        
+        const finalOrder = [...orderedCategories, ...otherCategories.sort()];
+
+        finalOrder.forEach(category => {
             const option = document.createElement('option');
             option.value = category;
-            option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            
+              // Custom display names
+            if (category === 'all') {
+                option.textContent = 'All Categories';
+            } else if (category === 'email') {
+                option.textContent = 'Email';
+            } else if (category === 'gatedasset') {
+                option.textContent = 'AssetHub';
+            } else if (category === 'meeting') {
+                option.textContent = 'Meeting';
+            } else if (category === 'event') {
+                option.textContent = 'Event';
+            } else if (category === 'webinar') {
+                option.textContent = 'Webinar';
+            } else if (category === 'featured') {
+                option.textContent = 'Featured Templates';
+            } else if (category === 'trending') {
+                option.textContent = 'Trending Templates';
+            } else {
+                option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            }
+            
             categoryFilter.appendChild(option);
         });
     }
