@@ -93,11 +93,11 @@
 }
 
 nav a:hover {
-    color: #2563eb;
+    color: #8039df;
 }
 
 nav .active {
-    color: #2563eb;
+    color: #8039df;
     font-weight: 600;
 }
 
@@ -193,7 +193,7 @@ nav .active {
         }
         
         .banner {
-            background: linear-gradient(45deg, #1a73e8, #4285f4);
+             background: linear-gradient(135deg, #4a90e2, #8a2be2, #ff3cac);
             border-radius: 12px;
             padding: 60px 30px;
             color: white;
@@ -609,8 +609,8 @@ nav .active {
         
         .view-details-btn {
             padding: 12px 24px;
-            background-color: white;
-            color: #111;
+            background-color: #8039df;
+            color: white;
             font-weight: 600;
             border-radius: 4px;
             cursor: pointer;
@@ -620,7 +620,7 @@ nav .active {
         }
         
         .view-details-btn:hover {
-            background-color: #f5f5f5;
+            background-color: #8039df;
         }
         
         .template-info {
@@ -685,7 +685,7 @@ nav .active {
             .templates-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
-                 padding: 0 15px;
+                
             }
         }
         
@@ -693,7 +693,7 @@ nav .active {
             .section-header {
                 flex-direction: column;
                 align-items: center;
-                 padding: 0 15px;
+                 
             }
             
             .browse-link {
@@ -804,8 +804,8 @@ nav .active {
 
         .view-details-btn {
             padding: 12px 24px;
-            background-color: white;
-            color: #111;
+            background-color: #8039df;
+            color:white;
             font-weight: 600;
             border-radius: 4px;
             cursor: pointer;
@@ -815,7 +815,8 @@ nav .active {
         }
 
         .view-details-btn:hover {
-            background-color: #f5f5f5;
+            background-color: #8039df;
+            
         }
 
         .template-info {
@@ -879,7 +880,7 @@ nav .active {
             .trending-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
-                 padding: 0 15px;
+                 
             }
         }
 
@@ -887,7 +888,7 @@ nav .active {
             .trending-header {
                 flex-direction: column;
                 align-items: center;
-                 padding: 0 15px;
+                 
             }
         }
 
@@ -984,9 +985,10 @@ nav .active {
         
         /* CTA Section Styles */
         .cta {
+             font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
             position: relative;
-            padding: 10px 0;
-            background-color: #2563EB; /* Blue background color */
+            padding: 90px 0;
+             background: linear-gradient(135deg, #4a90e2, #8a2be2, #ff3cac);
             color: #fff;
             overflow: hidden;
         }
@@ -1007,7 +1009,7 @@ nav .active {
         
         .cta-content {
             flex: 1;
-            text-align: left;
+            text-align: center;
         }
         
         .cta-image {
@@ -1137,7 +1139,7 @@ nav .active {
         }
         
         .social-icon:hover {
-            background-color: #f0268f;
+            background-color: #8039df;
         }
         
        
@@ -1213,22 +1215,35 @@ nav .active {
         }
   
 /* search bar */
-/* Search Bar Styles (outside banner) */
-     /* Search and Filter Container */
-      /* Main container that holds search input and dropdown */
-.search-filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    padding: 0 16px;
-}
+
+ .search-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .search-filter-container:hover {
+          
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
 
 /* Search input + button grouping */
 .search-container {
     display: flex;
+     font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
     flex-direction: row;
     align-items: stretch;
     border-radius: 8px;
@@ -1239,18 +1254,23 @@ nav .active {
 
 /* Input field */
 .search-input {
-    padding: 12px 16px;
+     font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
+    padding: 16px 16px;
     font-size: 16px;
     border: none;
     outline: none;
-    width: 300px;
+    width: 700px;
     min-width: 220px;
 }
 
+
+
+
 /* Submit button */
 .search-button {
+     font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
     padding: 12px 20px;
-    background-color: #007bff;
+     background:#8039df;
     color: white;
     border: none;
     cursor: pointer;
@@ -1259,16 +1279,53 @@ nav .active {
 }
 
 .search-button:hover {
-    background-color: #0056b3;
+    background-color: #451b7c;
 }
+
+/* Wrapper remains the same */
+.search-container {
+  position: relative; /* Required to position the clear icon inside */
+  display: flex;
+  font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+/* Style for clear "X" icon */
+.search-input::after,
+.search-clear {
+  content: '×';
+  position: absolute;
+  right: 100px; /* Adjust based on padding/button */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  display: none;
+  z-index: 2;
+  user-select: none;
+}
+
+.search-input.has-value + .search-clear {
+  display: block;
+}
+
 
 /* Dropdown */
 .dropdown-container {
+     font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
     position: relative;
 }
 
 .dropdown-select {
-    padding: 12px 16px;
+     font-family: 'Lexend Deca', 'Helvetica Neue', Helvetica, sans-serif;
+    background-color: #8039df;
+    padding: 16px 16px;
     font-size: 16px;
     background: white;
     border: none;
@@ -1277,11 +1334,14 @@ nav .active {
     cursor: pointer;
     min-width: 200px;
 }
+.dropdown-select option:hover{
+    background-color: #8039df;
+}
 
 /* Tablet View (768px - 1024px) */
 @media (max-width: 1024px) {
     .search-input {
-        width: 250px;
+        width: 350px;
     }
 
     .dropdown-select {
@@ -1294,6 +1354,7 @@ nav .active {
     .search-filter-container {
         flex-direction: column;
         align-items: stretch;
+        
     }
 
     .search-container {
@@ -1319,6 +1380,31 @@ nav .active {
     }
 }
 
+/* trending section */
+
+
+.template-trending {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #4a90e2, #8a2be2, #ff3cac);
+  color: white;
+  
+  gap: 6px;
+ 
+}
+
+
+
+.template-trending .icon {
+  font-size: 16px;
+  margin-top: -1px;
+}
+
 
     </style>
 </head>
@@ -1332,8 +1418,8 @@ nav .active {
                 </a>
                 <nav id="mainNav">
                     <ul>
-                        <li><a href="#" >Home</a></li>
-                        <li><a href="#HTML">HTML</a></li>
+                        
+                        <li><a href="#HTML">HTML Email</a></li>
                         <li><a href="#trending">Landing Page</a></li>
                         
                     </ul>
@@ -1374,15 +1460,23 @@ nav .active {
 <!-- Search and Filter Container -->
     <div class="search-filter-container">
         <div class="search-container">
-            <input type="text" class="search-input" id="searchInput" placeholder="Search for templates..." onkeyup="filterTemplates()">
-            <button class="search-button">Search</button>
-        </div>
+  <input type="text" class="search-input" id="searchInput" placeholder="Search for templates..." onkeyup="filterTemplates()">
+  <button class="search-button">Search</button>
+</div>
+
         
         <div class="dropdown-container">
-            <select class="dropdown-select" id="categoryFilter" onchange="filterByCategory()">
-                <option value="all">All Categories</option>
-                <option value="featured">Featured Templates</option>
-                <option value="trending">Trending Templates</option>
+            <select  class="dropdown-select" id="categoryFilter" onchange="filterByCategory()">
+                
+               
+                  <option  value="all">All Categories</option>
+            <option value="email">Email</option>
+            <option value="gatedasset">Asset Hub</option>
+            <option value="meeting">Meeting</option>
+            <option value="event">Event</option>
+            <option value="webinar">Webinar</option>
+            
+            
             </select>
         </div>
     </div>
@@ -1520,21 +1614,23 @@ nav .active {
     -->
 
     <!-- Featured Assets -->
-     <section class="featured-templates" id="HTML" data-category="featured">
+     <section class="featured-templates" id="HTML" data-category="featured" data-template-name="featured">
         <div class="section-header">
             <div class="section-titles">
-                <h2 class="section-title">Featured HTML Templates</h2>
+                <h2 class="section-title">Featured HTML Email Templates</h2>
                 <p class="section-subtitle">Hand-picked selection of website templates</p>
             </div>
         </div>
         
          <div class="templates-grid">
-            <!-- Template 1: Foley -->
-            <div class="template-card" data-template-name="GatedAsset" data-category="featured" >
+
+
+             <!-- Template 1: Foley -->
+            <div class="template-card" data-template-name="Email HTML" data-category="email">
                 <div class="template-preview">
-                    <img src="gatedasset.png" alt="Foley - Minimal Portfolio Template">
+                    <img src="FunnelFixer.png" alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn" ><a style="text-decoration: none;color: black;" href="https://gatedasset.vercel.app/">View Details</a></button>
+                     <a style="text-decoration: none;color:white;" href="https://funnel-fixer.vercel.app/">   <button class="view-details-btn" >View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1543,24 +1639,25 @@ nav .active {
                             <img src="creator1.webp" alt="Robin Granqvist">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">GatedAsset</div>
+                            <div class="template-name">HTML Email</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                    <div class="template-trending">Featured <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
                 </div>
                 <div class="divider"></div>
             </div>
+           
 
 
 
 
              <!-- Template 2: Foley -->
-            <div class="template-card" data-template-name="Email HTML" data-category="featured">
+            <div class="template-card" data-template-name="Email HTML" data-category="email">
                 <div class="template-preview">
                     <img src="Email.png"  alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn" ><a style="text-decoration: none;color: black;" href="https://email-kappa-seven.vercel.app/">View Details</a></button>
+                    <a style="text-decoration: none;color:white;" href="https://email-kappa-seven.vercel.app/">   <button class="view-details-btn" >View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1569,22 +1666,22 @@ nav .active {
                             <img src="creator1.webp" alt="Robin Granqvist">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Email HTML</div>
+                            <div class="template-name">HTML Email</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                     <div class="template-trending">Featured <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
                 </div>
                 <div class="divider"></div>
             </div>
 
 
             <!-- Template 3: HokStudio -->
-            <div class="template-card" data-template-name="Email Content" data-category="featured">
+            <div class="template-card" data-template-name="Email HTML" data-category="email">
                 <div class="template-preview">
                     <img src="emailcontent.png" alt="HokStudio - Agency Website Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://emailcontent.vercel.app/">View Details</a></button>
+                      <a style="text-decoration: none;color: white;" href="https://emailcontent.vercel.app/"> <button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1593,21 +1690,21 @@ nav .active {
                             <img src="creator2.webp" alt="Arini Studio">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Email Content</div>
+                            <div class="template-name">HTML Email</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                     <div class="template-trending">Featured <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
                 </div>
                 <div class="divider"></div>
             </div>
 
             <!-- Template 4: Ondex -->
-            <div class="template-card" data-template-name="Email" data-category="featured">
+            <div class="template-card" data-template-name="Email HTML" data-category="email">
                 <div class="template-preview">
                     <img src="emailhtml.png" alt="Ondex - Tech Website Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://emailcontent-vhep.vercel.app/">View Details</a></button>
+                      <a style="text-decoration: none;color: white;" href="https://emailcontent-vhep.vercel.app/"> <button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1616,11 +1713,11 @@ nav .active {
                             <img src="creator3.webp" alt="Flowit Supply">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Email</div>
+                            <div class="template-name">HTML Email</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                    <div class="template-trending">Featured <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
                 </div>
                 <div class="divider"></div>
             </div>
@@ -1629,13 +1726,24 @@ nav .active {
            
         </div>
 
-         <div class="templates-grid">
-            <!-- Template 5: Foley -->
-            <div class="template-card" data-template-name="Bussinessscale" data-category="featured">
+     
+
+
+        
+
+
+        <div class="templates-grid">
+           
+
+ 
+
+
+             <!-- Template 5: Foley -->
+            <div class="template-card" data-template-name="Email HTML" data-category="email">
                 <div class="template-preview">
-                    <img src="Bussinessscale.png" alt="Foley - Minimal Portfolio Template">
+                    <img src="amazongift.png"  alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn" ><a style="text-decoration: none;color: black;" href="https://bussinessscale.com/signdesk/asset-hub-mql.html">View Details</a></button>
+                        <a style="text-decoration: none;color: white;" href="https://bussinessscale.com/amazon/giftcard.html"><button class="view-details-btn" >View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1644,48 +1752,22 @@ nav .active {
                             <img src="creator1.webp" alt="Robin Granqvist">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Bussinessscale</div>
+                            <div class="template-name">HTML Email</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                   
                 </div>
                 <div class="divider"></div>
             </div>
 
 
-
-
-             <!-- Template 6: Foley -->
-            <div class="template-card" data-template-name="Hotspot" data-category="featured">
+            <!-- Template 6: HokStudio -->
+            <div class="template-card" data-template-name="Email HTML" data-category="email">
                 <div class="template-preview">
-                    <img src="hotspot.png"  alt="Foley - Minimal Portfolio Template">
+                    <img src="FunnelFixer1.png" alt="HokStudio - Agency Website Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn" ><a style="text-decoration: none;color: black;" href="https://intelous-landing.vercel.app/">View Details</a></button>
-                    </div>
-                </div>
-                <div class="template-info">
-                    <div class="template-creator">
-                        <div class="creator-avatar">
-                            <img src="creator1.webp" alt="Robin Granqvist">
-                        </div>
-                        <div class="creator-info">
-                            <div class="template-name">Hotspot</div>
-                            <div class="creator-name">Intelous</div>
-                        </div>
-                    </div>
-                    <div class="template-price">$49 USD</div>
-                </div>
-                <div class="divider"></div>
-            </div>
-
-
-            <!-- Template 7: HokStudio -->
-            <div class="template-card" data-template-name="TechbusinessLive" data-category="featured">
-                <div class="template-preview">
-                    <img src="Techbusinesslive.png"  alt="HokStudio - Agency Website Template">
-                    <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://techbusinesslive.cloud/redhat/asset-hub.html">View Details</a></button>
+                       <a style="text-decoration: none;color: white;" href="https://liveemailcontent.vercel.app/"> <button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1694,21 +1776,21 @@ nav .active {
                             <img src="creator2.webp" alt="Arini Studio">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">TechbusinessLive</div>
+                            <div class="template-name">HTML Email</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                   
                 </div>
                 <div class="divider"></div>
             </div>
 
-            <!-- Template 8: Ondex -->
-            <div class="template-card" data-template-name="Bussinessscale" data-category="featured">
+            <!-- Template 7: Ondex -->
+            <div class="template-card" data-template-name="Email HTML" data-category="email">
                 <div class="template-preview">
-                    <img src="Bussinessscale1.png" alt="Ondex - Tech Website Template">
+                    <img src="Amazon.png" alt="Ondex - Tech Website Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://bussinessscale.com/signdesk/asset-hub-bant.html">View Details</a></button>
+                       <a style="text-decoration: none;color: white;" href="https://bussinessscale.com/amazon/email.html"> <button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1717,30 +1799,21 @@ nav .active {
                             <img src="creator3.webp" alt="Flowit Supply">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Bussinessscale</div>
+                            <div class="template-name">HTML Email</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                    
                 </div>
                 <div class="divider"></div>
             </div>
 
-           
-           
-        </div>
-
-
-        
-
-
-         <div class="templates-grid">
-            <!-- Template 9: Foley -->
-            <div class="template-card" data-template-name="FunnelFixer" data-category="featured">
+           <!-- Template 8: Foley -->
+            <div class="template-card" data-template-name="AssetHub" data-category="gatedasset" >
                 <div class="template-preview">
-                    <img src="FunnelFixer.png" alt="Foley - Minimal Portfolio Template">
+                    <img src="gatedasset.png" alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn" ><a style="text-decoration: none;color: black;" href="https://funnel-fixer.vercel.app/">View Details</a></button>
+                       <a style="text-decoration: none;color: white;" href="https://gatedasset.vercel.app/"> <button class="view-details-btn" >View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1749,12 +1822,38 @@ nav .active {
                             <img src="creator1.webp" alt="Robin Granqvist">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">FunnelFixer</div>
+                            <div class="template-name">Asset Hub</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                    
                 </div>
+                <div class="divider"></div>
+            </div>
+           
+        </div>
+
+
+           <div class="templates-grid">
+            <!-- Template 9: Foley -->
+            <div class="template-card" data-template-name="AssetHub" data-category="gatedasset">
+                <div class="template-preview">
+                    <img src="Bussinessscale.png" alt="Foley - Minimal Portfolio Template">
+                    <div class="hover-overlay">
+                      <a style="text-decoration: none;color: white;" href="https://bussinessscale.com/signdesk/asset-hub-mql.html">  <button class="view-details-btn" >View Details</button></a>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="creator1.webp" alt="Robin Granqvist">
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Asset Hub</div>
+                            <div class="creator-name">Intelous</div>
+                        </div>
+                    </div>
+                                    </div>
                 <div class="divider"></div>
             </div>
 
@@ -1762,11 +1861,11 @@ nav .active {
 
 
              <!-- Template 10: Foley -->
-            <div class="template-card" data-template-name="Amazon Gift" data-category="featured">
+            <div class="template-card" data-template-name="AssetHub" data-category="gatedasset">
                 <div class="template-preview">
-                    <img src="amazongift.png"  alt="Foley - Minimal Portfolio Template">
+                    <img src="hotspot.png"  alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn" ><a style="text-decoration: none;color: black;" href="https://bussinessscale.com/amazon/giftcard.html">View Details</a></button>
+                       <a style="text-decoration: none;color: white;" href="https://intelous-landing.vercel.app/"> <button class="view-details-btn" >View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1775,22 +1874,22 @@ nav .active {
                             <img src="creator1.webp" alt="Robin Granqvist">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Amazon Gift</div>
+                            <div class="template-name">Asset Hub</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                    
                 </div>
                 <div class="divider"></div>
             </div>
 
 
             <!-- Template 11: HokStudio -->
-            <div class="template-card" data-template-name="Techbusiness" data-category="featured">
+            <div class="template-card" data-template-name="AssetHub" data-category="gatedasset">
                 <div class="template-preview">
-                    <img src="FunnelFixer1.png" alt="HokStudio - Agency Website Template">
+                    <img src="Techbusinesslive.png"  alt="HokStudio - Agency Website Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://liveemailcontent.vercel.app/">View Details</a></button>
+                        <a style="text-decoration: none;color: white;" href="https://techbusinesslive.cloud/redhat/asset-hub.html"><button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1799,21 +1898,21 @@ nav .active {
                             <img src="creator2.webp" alt="Arini Studio">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Techbusiness</div>
+                            <div class="template-name">Asset Hub</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                   
                 </div>
                 <div class="divider"></div>
             </div>
 
             <!-- Template 12: Ondex -->
-            <div class="template-card" data-template-name="Amazon" data-category="featured">
+            <div class="template-card" data-template-name="AssetHub" data-category="gatedasset">
                 <div class="template-preview">
-                    <img src="Amazon.png" alt="Ondex - Tech Website Template">
+                    <img src="Bussinessscale1.png" alt="Ondex - Tech Website Template">
                     <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://bussinessscale.com/amazon/email.html">View Details</a></button>
+                        <a style="text-decoration: none;color: white;" href="https://bussinessscale.com/signdesk/asset-hub-bant.html"><button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1822,11 +1921,11 @@ nav .active {
                             <img src="creator3.webp" alt="Flowit Supply">
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Amazon</div>
+                            <div class="template-name">Asset Hub</div>
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                   
                 </div>
                 <div class="divider"></div>
             </div>
@@ -1834,9 +1933,6 @@ nav .active {
            
            
         </div>
-
-
-       
 
 
     </section>
@@ -1852,81 +1948,13 @@ nav .active {
         </div>
 
         <div class="trending-grid">
-            <!-- Template 1: Foley -->
-            <div class="template-card" data-template-name="Webinar"  data-category="trending">
-                <div class="template-preview">
-                    <img src="webinar.png" alt="Foley - Minimal Portfolio Template" />
-                    <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://webinar1-ten.vercel.app/">View Details</a></button>
-                    </div>
-                </div>
-                <div class="template-info">
-                    <div class="template-creator">
-                        <div class="creator-avatar">
-                            <img src="creator1.webp" alt="Robin Granqvist" />
-                        </div>
-                        <div class="creator-info">
-                            <div class="template-name">Webinar</div>
-                            <div class="creator-name">Intelous</div>
-                        </div>
-                    </div>
-                    <div class="template-price">$49 USD</div>
-                </div>
-                <div class="divider"></div>
-            </div>
 
-            <!-- Template 2: HokStudio -->
-            <div class="template-card" data-template-name="Dashboard"  data-category="trending">
-                <div class="template-preview">
-                    <img src="dashboard.png" alt="HokStudio - Agency Website Template" />
-                    <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://dashboard-eta-pied.vercel.app/">View Details</a></button>
-                    </div>
-                </div>
-                <div class="template-info">
-                    <div class="template-creator">
-                        <div class="creator-avatar">
-                            <img src="creator2.webp" alt="Arini Studio" />
-                        </div>
-                        <div class="creator-info">
-                            <div class="template-name">Dashboard</div>
-                            <div class="creator-name">Intelous</div>
-                        </div>
-                    </div>
-                    <div class="template-price">$49 USD</div>
-                </div>
-                <div class="divider"></div>
-            </div>
-
-            <!-- Template 3: Ondex -->
-            <div class="template-card" data-template-name="Event"  data-category="trending">
-                <div class="template-preview">
-                    <img src="event.png" alt="Ondex - Tech Website Template" />
-                    <div class="hover-overlay">
-                         <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://event-nine-psi.vercel.app/">View Details</a></button>
-                    </div>
-                </div>
-                <div class="template-info">
-                    <div class="template-creator">
-                        <div class="creator-avatar">
-                            <img src="creator3.webp" alt="Flowit Supply" />
-                        </div>
-                        <div class="creator-info">
-                            <div class="template-name">Event</div>
-                            <div class="creator-name">Intelous</div>
-                        </div>
-                    </div>
-                    <div class="template-price">$49 USD</div>
-                </div>
-                <div class="divider"></div>
-            </div>
-
-            <!-- Template 4: Acme -->
-            <div class="template-card" data-template-name="Acme"  data-category="trending">
+            <!-- Template 1: Acme -->
+            <div class="template-card" data-template-name="Meeting"  data-category="meeting">
                 <div class="template-preview">
                     <img src="webinar1.png" alt="Acme - Digital Studio Template" />
                     <div class="hover-overlay">
-                       <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://webinarlanding-six.vercel.app/">View Details</a></button>
+                      <a style="text-decoration: none;color: white;" href="https://webinarlanding-six.vercel.app/"> <button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -1935,70 +1963,24 @@ nav .active {
                             <img src="creator1.webp" alt="8AMDesign" />
                         </div>
                         <div class="creator-info">
-                            <div class="template-name">Acme</div>
+                            <div class="template-name">Meeting</div>
                             <div class="creator-name">8AMDesign</div>
                         </div>
                     </div>
-                    <div class="template-price">$29 USD</div>
-                </div>
-                <div class="divider"></div>
-            </div>
-        </div>
+                                         <div class="template-trending">Trending <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
 
-
-          <div class="trending-grid">
-            <!-- Template 5: Foley -->
-            <div class="template-card" data-template-name="Meeting"  data-category="trending">
-                <div class="template-preview">
-                    <img src="meeting.png" alt="Foley - Minimal Portfolio Template" />
-                    <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://meeting-snowy.vercel.app/">View Details</a></button>
-                    </div>
-                </div>
-                <div class="template-info">
-                    <div class="template-creator">
-                        <div class="creator-avatar">
-                            <img src="creator1.webp" alt="Robin Granqvist" />
-                        </div>
-                        <div class="creator-info">
-                            <div class="template-name">Meeting </div>
-                            <div class="creator-name">Intelous</div>
-                        </div>
-                    </div>
-                    <div class="template-price">$49 USD</div>
                 </div>
                 <div class="divider"></div>
             </div>
 
-            <!-- Template 6: HokStudio -->
-            <div class="template-card" data-template-name="Event"  data-category="trending">
-                <div class="template-preview">
-                    <img src="Event1.png" alt="HokStudio - Agency Website Template" />
-                    <div class="hover-overlay">
-                        <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://eventlandingpage.vercel.app/">View Details</a></button>
-                    </div>
-                </div>
-                <div class="template-info">
-                    <div class="template-creator">
-                        <div class="creator-avatar">
-                            <img src="creator2.webp" alt="Arini Studio" />
-                        </div>
-                        <div class="creator-info">
-                            <div class="template-name">Event</div>
-                            <div class="creator-name">Intelous</div>
-                        </div>
-                    </div>
-                    <div class="template-price">$49 USD</div>
-                </div>
-                <div class="divider"></div>
-            </div>
+          
 
-            <!-- Template 7: Ondex -->
-            <div class="template-card" data-template-name="Meeting"  data-category="trending">
+            <!-- Template 2: Ondex -->
+            <div class="template-card" data-template-name="Meeting"  data-category="meeting">
                 <div class="template-preview">
                     <img src="meeting1.png" alt="Ondex - Tech Website Template" />
                     <div class="hover-overlay">
-                         <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://meets-gamma.vercel.app/">View Details</a></button>
+                        <a style="text-decoration: none;color: white;" href="https://meets-gamma.vercel.app/"> <button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -2011,17 +1993,120 @@ nav .active {
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$49 USD</div>
+                                                            <div class="template-trending">Trending <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
+
                 </div>
                 <div class="divider"></div>
             </div>
 
-            <!-- Template 8: Acme -->
-            <div class="template-card" data-template-name="Webinar"  data-category="trending">
+            <!-- Template 3: Ondex -->
+            <div class="template-card" data-template-name="Event"  data-category="event">
+                <div class="template-preview">
+                    <img src="event.png" alt="Ondex - Tech Website Template" />
+                    <div class="hover-overlay">
+                         <a style="text-decoration: none;color: white;" href="https://event-nine-psi.vercel.app/"><button class="view-details-btn">View Details</button></a>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="creator3.webp" alt="Flowit Supply" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Event</div>
+                            <div class="creator-name">Intelous</div>
+                        </div>
+                    </div>
+                                        <div class="template-trending">Trending <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
+
+                </div>
+                <div class="divider"></div>
+            </div>
+
+             <!-- Template 4: Foley -->
+            <div class="template-card" data-template-name="Event"  data-category="event">
+                <div class="template-preview">
+                    <img src="meeting.png" alt="Foley - Minimal Portfolio Template" />
+                    <div class="hover-overlay">
+                       <a style="text-decoration: none;color: white;" href="https://meeting-snowy.vercel.app/"> <button class="view-details-btn">View Details</button></a>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="creator1.webp" alt="Robin Granqvist" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Event </div>
+                            <div class="creator-name">Intelous</div>
+                        </div>
+                    </div>
+                                                             <div class="template-trending">Trending <span class="arrow"><i class="fa-solid fa-arrow-trend-up"></i></span></div>
+
+                </div>
+                <div class="divider"></div>
+            </div>
+            
+        </div>
+
+
+          <div class="trending-grid">
+           
+
+            <!-- Template 5: HokStudio -->
+            <div class="template-card" data-template-name="Webinar"  data-category="webinar">
+                <div class="template-preview">
+                    <img src="Event1.png" alt="HokStudio - Agency Website Template" />
+                    <div class="hover-overlay">
+                        <a style="text-decoration: none;color: white;" href="https://eventlandingpage.vercel.app/"><button class="view-details-btn">View Details</button></a>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="creator2.webp" alt="Arini Studio" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Webinar</div>
+                            <div class="creator-name">Intelous</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="divider"></div>
+            </div>
+
+              <!-- Template 6: Foley -->
+            <div class="template-card" data-template-name="Webinar"  data-category="webinar">
+                <div class="template-preview">
+                    <img src="webinar.png" alt="Foley - Minimal Portfolio Template" />
+                    <div class="hover-overlay">
+                       <a style="text-decoration: none;color: white;" href="https://webinar1-ten.vercel.app/"><button class="view-details-btn">View Details</button></a>
+                    </div>
+                </div>
+                <div class="template-info">
+                    <div class="template-creator">
+                        <div class="creator-avatar">
+                            <img src="creator1.webp" alt="Robin Granqvist" />
+                        </div>
+                        <div class="creator-info">
+                            <div class="template-name">Webinar</div>
+                            <div class="creator-name">Intelous</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="divider"></div>
+            </div>
+
+         
+
+            <!-- Template 7: Acme -->
+            <div class="template-card" data-template-name="Webinar"  data-category="webinar">
                 <div class="template-preview">
                     <img src="web.png" alt="Acme - Digital Studio Template" />
                     <div class="hover-overlay">
-                       <button class="view-details-btn"><a style="text-decoration: none;color: black;" href="https://web-chi-mocha-22.vercel.app/">View Details</a></button>
+                      <a style="text-decoration: none;color:white;" href="https://web-chi-mocha-22.vercel.app/"> <button class="view-details-btn">View Details</button></a>
                     </div>
                 </div>
                 <div class="template-info">
@@ -2034,7 +2119,7 @@ nav .active {
                             <div class="creator-name">Intelous</div>
                         </div>
                     </div>
-                    <div class="template-price">$29 USD</div>
+                    
                 </div>
                 <div class="divider"></div>
             </div>
@@ -2073,10 +2158,7 @@ nav .active {
                     <p>Join thousands of professionals using our premium assets to elevate their work and streamline their workflow.</p>
                     <a href="#" class="btn btn-light">Get Started Today</a>
                 </div>
-                <div class="cta-image">
-                    <img src="https://cdn.prod.website-files.com/5e593fb060cf87bbaf75dd20/5e724ffc58686e74deae0b38_CTA%20Image-min.webp" 
-                         alt="CTA Image of design work">
-                </div>
+               
             </div>
         </div>
     </section>
@@ -2146,66 +2228,147 @@ nav .active {
 </script>
 
  <script>
-       function filterTemplates() {
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const searchFilter = searchInput ? searchInput.value.toLowerCase() : '';
-    const categoryValue = categoryFilter ? categoryFilter.value : 'all';
-    const templates = document.querySelectorAll('.template-card');
-    const sections = document.querySelectorAll('.featured-templates, .trending-templates');
+    function filterTemplates() {
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const searchFilter = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        const categoryValue = categoryFilter ? categoryFilter.value : 'all';
 
-    templates.forEach(template => {
-        const templateName = template.getAttribute('data-template-name').toLowerCase();
-        const templateCategory = template.getAttribute('data-category');
-        
-        const matchesSearch = templateName.includes(searchFilter);
-        const matchesCategory = categoryValue === 'all' || templateCategory === categoryValue;
-        
-        if (matchesSearch && matchesCategory) {
-            template.style.display = 'block'; // Show the template
-        } else {
-            template.style.display = 'none'; // Hide the template
+        const templates = document.querySelectorAll('.template-card');
+        const featuredSection = document.querySelector('.featured-templates');
+        const trendingSection = document.querySelector('.trending-templates');
+
+        // Show all featured templates if "featured" is typed in search
+        if (searchFilter === 'featured') {
+            if (featuredSection) {
+                featuredSection.style.display = 'block';
+                const featuredTemplates = featuredSection.querySelectorAll('.template-card');
+                featuredTemplates.forEach(template => {
+                    template.style.display = 'block';
+                });
+            }
+            if (trendingSection) trendingSection.style.display = 'none';
+            return;
         }
+
+        // Show all trending templates if "trending" is typed in search
+        if (searchFilter === 'trending') {
+            if (trendingSection) {
+                trendingSection.style.display = 'block';
+                const trendingTemplates = trendingSection.querySelectorAll('.template-card');
+                trendingTemplates.forEach(template => {
+                    template.style.display = 'block';
+                });
+            }
+            if (featuredSection) featuredSection.style.display = 'none';
+            return;
+        }
+
+        // Default filtering logic
+        let featuredHasVisible = false;
+        let trendingHasVisible = false;
+
+        templates.forEach(template => {
+            const templateName = template.getAttribute('data-template-name').toLowerCase();
+            const templateCategory = template.getAttribute('data-category');
+            const parentSection = template.closest('.featured-templates, .trending-templates');
+
+            const matchesSearch = templateName.includes(searchFilter);
+            const matchesCategory = categoryValue === 'all' || templateCategory === categoryValue;
+
+            if (matchesSearch && matchesCategory) {
+                template.style.display = 'block';
+
+                if (parentSection && parentSection.classList.contains('featured-templates')) {
+                    featuredHasVisible = true;
+                }
+                if (parentSection && parentSection.classList.contains('trending-templates')) {
+                    trendingHasVisible = true;
+                }
+            } else {
+                template.style.display = 'none';
+            }
+        });
+
+        if (featuredSection) {
+            featuredSection.style.display = featuredHasVisible ? 'block' : 'none';
+        }
+        if (trendingSection) {
+            trendingSection.style.display = trendingHasVisible ? 'block' : 'none';
+        }
+    }
+
+    function filterByCategory() {
+        filterTemplates(); // Reuse the same filtering logic
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+
+        if (searchInput) {
+            searchInput.addEventListener('keyup', filterTemplates);
+        }
+
+        if (categoryFilter) {
+            categoryFilter.addEventListener('change', filterTemplates);
+        }
+
+        filterTemplates(); // Initial load
     });
 
-    // Show/hide section headers based on visible templates
-    sections.forEach(section => {
-        const visibleTemplates = section.querySelectorAll('.template-card[style*="block"], .template-card:not([style*="none"])');
-        const hasVisibleTemplates = Array.from(visibleTemplates).some(template => 
-            template.style.display !== 'none'
-        );
-        
-        if (hasVisibleTemplates) {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
-        }
-    });
-}
+    function getAllCategories() {
+        const templates = document.querySelectorAll('.template-card');
+        const categories = new Set(['all', 'featured', 'trending']);
 
-function filterByCategory() {
-    filterTemplates(); // Reuse the same filtering logic
-}
+        templates.forEach(template => {
+            const category = template.getAttribute('data-category');
+            if (category && category !== 'featured' && category !== 'trending') {
+                categories.add(category);
+            }
+        });
 
-// Initialize filter on page load and add event listeners
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-    
-    // Add keyup event listener to search input for real-time filtering
-    if (searchInput) {
-        searchInput.addEventListener('keyup', filterTemplates);
+        return Array.from(categories);
     }
-    
-    // Add change event listener to category dropdown
-    if (categoryFilter) {
-        categoryFilter.addEventListener('change', filterTemplates);
+
+    function populateCategoryDropdown() {
+        const categoryFilter = document.getElementById('categoryFilter');
+        if (!categoryFilter) return;
+
+        const categories = getAllCategories();
+        categoryFilter.innerHTML = '';
+
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            categoryFilter.appendChild(option);
+        });
     }
-    
-    // Initial filter on page load
-    filterTemplates();
-});
-    </script>
+</script>
+
+<script>
+  const input = document.getElementById('searchInput');
+
+  // Create the clear button
+  const clearBtn = document.createElement('span');
+  clearBtn.className = 'search-clear';
+  clearBtn.innerHTML = '×';
+  clearBtn.onclick = () => {
+    input.value = '';
+    clearBtn.style.display = 'none';
+    input.focus();
+    filterTemplates(); // optional
+  };
+
+  // Append clear button
+  document.querySelector('.search-container').appendChild(clearBtn);
+
+  // Show/hide clear button based on input
+  input.addEventListener('input', () => {
+    clearBtn.style.display = input.value ? 'block' : 'none';
+  });
+</script>
 
     
 
