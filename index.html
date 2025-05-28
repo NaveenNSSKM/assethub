@@ -1212,6 +1212,113 @@ nav .active {
             }
         }
   
+/* search bar */
+/* Search Bar Styles (outside banner) */
+     /* Search and Filter Container */
+      /* Main container that holds search input and dropdown */
+.search-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 0 16px;
+}
+
+/* Search input + button grouping */
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+/* Input field */
+.search-input {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 300px;
+    min-width: 220px;
+}
+
+/* Submit button */
+.search-button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown */
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-select {
+    padding: 12px 16px;
+    font-size: 16px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    min-width: 200px;
+}
+
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+    .search-input {
+        width: 250px;
+    }
+
+    .dropdown-select {
+        min-width: 180px;
+    }
+}
+
+/* Mobile View (up to 767px) */
+@media (max-width: 767px) {
+    .search-filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container {
+        flex-direction: column;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .search-input,
+    .search-button,
+    .dropdown-select {
+        width: 100%;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-button {
+        padding: 12px 0;
+    }
+
+    .dropdown-container {
+        width: 100%;
+    }
+}
+
 
     </style>
 </head>
@@ -1259,6 +1366,24 @@ nav .active {
             <p class="subtitle">Browse, discover, and download top-tier design, dev, and content assets to accelerate your workflow.</p>
             
            
+        </div>
+    </div>
+
+
+    <!-- Search Bar outside banner -->
+<!-- Search and Filter Container -->
+    <div class="search-filter-container">
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search for templates..." onkeyup="filterTemplates()">
+            <button class="search-button">Search</button>
+        </div>
+        
+        <div class="dropdown-container">
+            <select class="dropdown-select" id="categoryFilter" onchange="filterByCategory()">
+                <option value="all">All Categories</option>
+                <option value="featured">Featured Templates</option>
+                <option value="trending">Trending Templates</option>
+            </select>
         </div>
     </div>
 
@@ -1395,7 +1520,7 @@ nav .active {
     -->
 
     <!-- Featured Assets -->
-     <section class="featured-templates" id="HTML">
+     <section class="featured-templates" id="HTML" data-category="featured">
         <div class="section-header">
             <div class="section-titles">
                 <h2 class="section-title">Featured HTML Templates</h2>
@@ -1405,7 +1530,7 @@ nav .active {
         
          <div class="templates-grid">
             <!-- Template 1: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="GatedAsset" data-category="featured" >
                 <div class="template-preview">
                     <img src="gatedasset.png" alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
@@ -1431,7 +1556,7 @@ nav .active {
 
 
              <!-- Template 2: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Email HTML" data-category="featured">
                 <div class="template-preview">
                     <img src="Email.png"  alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
@@ -1455,7 +1580,7 @@ nav .active {
 
 
             <!-- Template 3: HokStudio -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Email Content" data-category="featured">
                 <div class="template-preview">
                     <img src="emailcontent.png" alt="HokStudio - Agency Website Template">
                     <div class="hover-overlay">
@@ -1478,7 +1603,7 @@ nav .active {
             </div>
 
             <!-- Template 4: Ondex -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Email" data-category="featured">
                 <div class="template-preview">
                     <img src="emailhtml.png" alt="Ondex - Tech Website Template">
                     <div class="hover-overlay">
@@ -1506,7 +1631,7 @@ nav .active {
 
          <div class="templates-grid">
             <!-- Template 5: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Bussinessscale" data-category="featured">
                 <div class="template-preview">
                     <img src="Bussinessscale.png" alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
@@ -1532,7 +1657,7 @@ nav .active {
 
 
              <!-- Template 6: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Hotspot" data-category="featured">
                 <div class="template-preview">
                     <img src="hotspot.png"  alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
@@ -1556,7 +1681,7 @@ nav .active {
 
 
             <!-- Template 7: HokStudio -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="TechbusinessLive" data-category="featured">
                 <div class="template-preview">
                     <img src="Techbusinesslive.png"  alt="HokStudio - Agency Website Template">
                     <div class="hover-overlay">
@@ -1579,7 +1704,7 @@ nav .active {
             </div>
 
             <!-- Template 8: Ondex -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Bussinessscale" data-category="featured">
                 <div class="template-preview">
                     <img src="Bussinessscale1.png" alt="Ondex - Tech Website Template">
                     <div class="hover-overlay">
@@ -1611,7 +1736,7 @@ nav .active {
 
          <div class="templates-grid">
             <!-- Template 9: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="FunnelFixer" data-category="featured">
                 <div class="template-preview">
                     <img src="FunnelFixer.png" alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
@@ -1637,7 +1762,7 @@ nav .active {
 
 
              <!-- Template 10: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Amazon Gift" data-category="featured">
                 <div class="template-preview">
                     <img src="amazongift.png"  alt="Foley - Minimal Portfolio Template">
                     <div class="hover-overlay">
@@ -1661,7 +1786,7 @@ nav .active {
 
 
             <!-- Template 11: HokStudio -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Techbusiness" data-category="featured">
                 <div class="template-preview">
                     <img src="FunnelFixer1.png" alt="HokStudio - Agency Website Template">
                     <div class="hover-overlay">
@@ -1684,7 +1809,7 @@ nav .active {
             </div>
 
             <!-- Template 12: Ondex -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Amazon" data-category="featured">
                 <div class="template-preview">
                     <img src="Amazon.png" alt="Ondex - Tech Website Template">
                     <div class="hover-overlay">
@@ -1718,7 +1843,7 @@ nav .active {
 
         <!--------------trending Templates---------------->
 
-    <section class="trending-templates" id="trending">
+    <section class="trending-templates" id="trending" data-category="trending">
         <div class="trending-header">
             <div class="trending-titles">
                 <h2 class="trending-title">Trending Landing Page Templates</h2>
@@ -1728,7 +1853,7 @@ nav .active {
 
         <div class="trending-grid">
             <!-- Template 1: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Webinar"  data-category="trending">
                 <div class="template-preview">
                     <img src="webinar.png" alt="Foley - Minimal Portfolio Template" />
                     <div class="hover-overlay">
@@ -1751,7 +1876,7 @@ nav .active {
             </div>
 
             <!-- Template 2: HokStudio -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Dashboard"  data-category="trending">
                 <div class="template-preview">
                     <img src="dashboard.png" alt="HokStudio - Agency Website Template" />
                     <div class="hover-overlay">
@@ -1774,7 +1899,7 @@ nav .active {
             </div>
 
             <!-- Template 3: Ondex -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Event"  data-category="trending">
                 <div class="template-preview">
                     <img src="event.png" alt="Ondex - Tech Website Template" />
                     <div class="hover-overlay">
@@ -1797,7 +1922,7 @@ nav .active {
             </div>
 
             <!-- Template 4: Acme -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Acme"  data-category="trending">
                 <div class="template-preview">
                     <img src="webinar1.png" alt="Acme - Digital Studio Template" />
                     <div class="hover-overlay">
@@ -1823,7 +1948,7 @@ nav .active {
 
           <div class="trending-grid">
             <!-- Template 5: Foley -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Meeting"  data-category="trending">
                 <div class="template-preview">
                     <img src="meeting.png" alt="Foley - Minimal Portfolio Template" />
                     <div class="hover-overlay">
@@ -1846,7 +1971,7 @@ nav .active {
             </div>
 
             <!-- Template 6: HokStudio -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Event"  data-category="trending">
                 <div class="template-preview">
                     <img src="Event1.png" alt="HokStudio - Agency Website Template" />
                     <div class="hover-overlay">
@@ -1869,7 +1994,7 @@ nav .active {
             </div>
 
             <!-- Template 7: Ondex -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Meeting"  data-category="trending">
                 <div class="template-preview">
                     <img src="meeting1.png" alt="Ondex - Tech Website Template" />
                     <div class="hover-overlay">
@@ -1892,7 +2017,7 @@ nav .active {
             </div>
 
             <!-- Template 8: Acme -->
-            <div class="template-card">
+            <div class="template-card" data-template-name="Webinar"  data-category="trending">
                 <div class="template-preview">
                     <img src="web.png" alt="Acme - Digital Studio Template" />
                     <div class="hover-overlay">
@@ -2019,6 +2144,71 @@ nav .active {
         });
     });
 </script>
+
+ <script>
+       function filterTemplates() {
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const searchFilter = searchInput ? searchInput.value.toLowerCase() : '';
+    const categoryValue = categoryFilter ? categoryFilter.value : 'all';
+    const templates = document.querySelectorAll('.template-card');
+    const sections = document.querySelectorAll('.featured-templates, .trending-templates');
+
+    templates.forEach(template => {
+        const templateName = template.getAttribute('data-template-name').toLowerCase();
+        const templateCategory = template.getAttribute('data-category');
+        
+        const matchesSearch = templateName.includes(searchFilter);
+        const matchesCategory = categoryValue === 'all' || templateCategory === categoryValue;
+        
+        if (matchesSearch && matchesCategory) {
+            template.style.display = 'block'; // Show the template
+        } else {
+            template.style.display = 'none'; // Hide the template
+        }
+    });
+
+    // Show/hide section headers based on visible templates
+    sections.forEach(section => {
+        const visibleTemplates = section.querySelectorAll('.template-card[style*="block"], .template-card:not([style*="none"])');
+        const hasVisibleTemplates = Array.from(visibleTemplates).some(template => 
+            template.style.display !== 'none'
+        );
+        
+        if (hasVisibleTemplates) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+}
+
+function filterByCategory() {
+    filterTemplates(); // Reuse the same filtering logic
+}
+
+// Initialize filter on page load and add event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    
+    // Add keyup event listener to search input for real-time filtering
+    if (searchInput) {
+        searchInput.addEventListener('keyup', filterTemplates);
+    }
+    
+    // Add change event listener to category dropdown
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', filterTemplates);
+    }
+    
+    // Initial filter on page load
+    filterTemplates();
+});
+    </script>
+
+    
+
 
 </body>
 </html>
